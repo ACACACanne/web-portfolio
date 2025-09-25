@@ -1,0 +1,22 @@
+{
+  "name": "web-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ACACACanne/web-portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ACACACanne/web-portfolio/issues"
+  },
+  "homepage": "https://github.com/ACACACanne/web-portfolio#readme",
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
