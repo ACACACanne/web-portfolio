@@ -1,0 +1,14 @@
+/* Optional ambient glow on hover */
+.group:hover img {
+  box-shadow: 0 0 80px rgba(249, 168, 212, 0.3);
+}
+
+/* Smooth transition for the entire section */
+section.group {
+  transition: background 0.7s ease-in-out;
+}
+
+.group:hover {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 70%);
+}
+
