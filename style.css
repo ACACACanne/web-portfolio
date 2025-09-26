@@ -667,6 +667,14 @@ span {
   .future-plans {
     font-size: 1.5rem;
   }
+  .skill-card {
+    padding: 1.5rem;
+  }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -682,6 +690,12 @@ span {
   .future-plans {
     font-size: 1.4rem;
   }
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+     
 }
 
 @media (max-width: 480px) {
@@ -698,6 +712,16 @@ span {
   .section-divider {
     width: 40px;
   }
+    .skill-card h3 {
+        font-size: 1.8rem;
+    }
+    .skill-card p {
+        font-size: 1.2rem;
+    }
+    .skill-card .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 1.4rem;
+    }
 }
 
 
