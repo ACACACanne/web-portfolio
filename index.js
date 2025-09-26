@@ -1,39 +1,58 @@
-const toggle=document.getElementById('themeToggle');
-toggle.addEventListener('click',()=>{
-    document.body.classList.toggle('dark');
+// ScrollReveal animations
+ScrollReveal({
+  reset: true,
+  distance: '60px',
+  duration: 2500,
+  delay: 400
 });
 
-const nav = document.getElementById('mobile-nav');
-      const openNavBtn = document.getElementById('nav__toggle-open');
-      const closeNavBtn = document.getElementById('nav__toggle-close');
+ScrollReveal().reveal('.heading', { delay: 200, origin: 'top' });
+ScrollReveal().reveal('.skills-grid, .about-section', { delay: 300, origin: 'bottom' });
+ScrollReveal().reveal('.skill-card', { interval: 200, origin: 'right' });
 
-      openNavBtn.addEventListener('click', () => {
-        nav.classList.remove('hidden');
-        openNavBtn.classList.add('hidden');
-        closeNavBtn.classList.remove('hidden');
+// Navbar toggle
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle('bx-x');
+  navbar.classList.toggle('active');
+};
+
+// Active section link on scroll
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll = () => {
+  sections.forEach(sec => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 150;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute('id');
+
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
       });
-
-      closeNavBtn.addEventListener('click', () => {
-        nav.classList.add('hidden');
-        openNavBtn.classList.remove('hidden');
-        closeNavBtn.classList.add('hidden');
-      });
-
-      // Theme toggle (optional enhancement)
-const themeToggle = document.getElementById('themeToggle');
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
+    }
   });
-}
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
+  // Sticky header
+  let header = document.querySelector('header');
+  header.classList.toggle('sticky', window.scrollY > 100);
+
+  // Remove toggle on scroll
+  menuIcon.classList.remove('bx-x');
+  navbar.classList.remove('active');
+};
+
+// Typed.js intro (optional)
+const typed = new Typed('.multiple-text', {
+  strings: ['Creative Technologist', 'Poetic UI Designer', 'Data-Driven Thinker'],
+  typeSpeed: 100,
+  backSpeed: 100,
+  backDelay: 1000,
+  loop: true
 });
 
