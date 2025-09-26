@@ -55,10 +55,10 @@
       <div class="about-content">
       <h2 class="heading">About <span>Me</span></h2>
 
-      <h3>Frontend, Backend <span>Developer</span> & <span>Data Analyst!</span>. <br /> Shaped by studies and creative spirit</h3>
+      <h3>I didn't begin in <span>Code</span> & <span>Data!</span> <br /> Shaped by studies and creative spirit</h3>
       <p>I’m Aniko Vigh, a <span>Developer</span> and a data-driven <span>Analyst</span> who sees code not just as logic, but as language—an instrument for storytelling, structure, and soul. <br /> My journey through an MSc in Computer Science with Data Analytics at the University of York taught me to navigate complexity with clarity, to find patterns in chaos, and to build systems that speak with purpose. Alongside this, my time at The Developer Academy bootcamp sharpened my craft—transforming curiosity into capability, and theory into touchable design.
       <br />I build with intention. I design with empathy. Whether I’m animating a flower that blooms on scroll, or visualizing data that reveals hidden truths, I strive to make the digital feel human. <br />My work lives at the intersection of precision and poetry—modular, responsive, and quietly cinematic. Every line of code is a brushstroke. Every interface, a canvas. And every project, a chance to connect.</p>
-      <a href="#" class="btn">Read More</a>
+      <a href="about.html" class="btn">Read More</a>
       </div>
     </section>
 
@@ -148,16 +148,16 @@
     <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Me!</span></h2>
       <div class="contact-container">
-        <form action="#">
+        <form action="https://formsubmit.co/contact@anikovighportfolio.com" method="POST">
           <div class="input-box">
-            <input type="text" placeholder="Full Name">
-            <input type="email" placeholder="Email Address">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
           </div>
           <div class="input-box">
-            <input type="number" placeholder="Mobile Number">
-            <input type="text" placeholder="Email Subject">
+            <input type="number" name="mobile" placeholder="Mobile Number" required>
+            <input type="text" name="subject" placeholder="Email Subject" required>
           </div>
-          <textarea name="" id="" placeholder="Your Message" class="box" cols="30" rows="10"></textarea>
+          <textarea name="message" id="" placeholder="Your Message" class="box" cols="30" rows="10"></textarea>
           <input type="submit" value="Send Message" class="btn">
         </form>
       </div>
