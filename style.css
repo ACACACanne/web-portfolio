@@ -172,7 +172,7 @@ span {
 }
 
 .about-img img {
-    width: 68vw;
+    width: 65vw;
     border-radius: 2rem;
     animation: floatImage 4s ease-in-out infinite;
 }
