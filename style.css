@@ -172,8 +172,9 @@ span {
 }
 
 .about-img img {
-    width: 57vw;
+    width: 68vw;
     border-radius: 2rem;
+    animation: floatImage 4s ease-in-out infinite;
 }
 
 .heading {
@@ -723,5 +724,6 @@ span {
         font-size: 1.4rem;
     }
 }
+
 
 
