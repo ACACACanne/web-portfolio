@@ -337,7 +337,7 @@ span {
 
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 2rem 9%;
     background: var(--second-bg-color);
@@ -345,6 +345,9 @@ span {
 
 .footer-text {
     font-size: 1.6rem;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
 }
 
 .footer-iconTop a {
