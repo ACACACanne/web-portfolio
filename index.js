@@ -56,3 +56,61 @@ const typed = new Typed('.multiple-text', {
   loop: true
 });
 
+const pages = document.querySelectorAll('.page');
+let currentPage = 0;
+
+// If you want to use the "active" class for showing pages:
+function showPage(index) {
+  pages.forEach((page, i) => {
+    page.classList.remove('active');
+    if (i === index) {
+      page.classList.add('active');
+    }
+  });
+}
+
+document.getElementById('next')?.addEventListener('click', () => {
+  currentPage = (currentPage + 1) % pages.length;
+  showPage(currentPage);
+});
+
+document.getElementById('prev')?.addEventListener('click', () => {
+  currentPage = (currentPage - 1 + pages.length) % pages.length;
+  showPage(currentPage);
+});
+showPage(currentPage);
+
+// If you want to use the rotateY effect for showing pages, you can use the following instead:
+// function showPage(index) {
+//   pages.forEach((page, i) => {
+//     page.style.transform = i === index ? 'rotateY(0deg)' : 'rotateY(-180deg)';
+//   });
+// }
+
+// document.querySelector('.next')?.onclick = () => {
+//   currentPage = (currentPage + 1) % pages.length;
+//   showPage(currentPage);
+// };
+
+// document.querySelector('.prev')?.onclick = () => {
+//   currentPage = (currentPage - 1 + pages.length) % pages.length;
+//   showPage(currentPage);
+// };
+
+function showPage(index) {
+  pages.forEach((page, i) => {
+    page.style.transform = i === index ? 'rotateY(0deg)' : 'rotateY(-180deg)';
+  });
+}
+
+document.querySelector('.next').onclick = () => {
+  currentPage = (currentPage + 1) % pages.length;
+  showPage(currentPage);
+};
+
+document.querySelector('.prev').onclick = () => {
+  currentPage = (currentPage - 1 + pages.length) % pages.length;
+  showPage(currentPage);
+};
+
+  
