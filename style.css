@@ -193,6 +193,7 @@ span {
 .about-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+    text-align: justify;
 }
 
 .portfolio {
@@ -315,7 +316,7 @@ span {
 
 .footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 2rem 9%;
     background: var(--second-bg-color);
@@ -470,6 +471,11 @@ span {
     line-height: 1.5;
     color: var(--text-color);
 }
+.introduction h2 {
+    font-size: 3.6rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
 .introduction span {
     color: var(--main-color);
 }
@@ -486,6 +492,11 @@ span {
 .introduction a:active {
     transform: scale(.98);
 }
+.introduction p {
+    margin: 1rem 0;
+    text-align: justify;
+}
+
 
 .written-with-heart {
   margin-bottom: 2rem; /* or even 1rem for tighter spacing */
