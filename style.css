@@ -211,7 +211,7 @@ span {
 .portfolio-container .portfolio-box {
     position: relative;
     border-radius: 2rem;
-    box-shadow: 0 0 1rem var(--bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
     overflow: hidden;
     display: flex;
 }
@@ -244,6 +244,28 @@ span {
 
 .portfolio-box:hover .portfolio-layer {
     transform: translateY(0);
+}
+
+.portfolio .btn-box {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio .btn-view {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);  
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
 }
 
 .portfolio-layer h4 {
