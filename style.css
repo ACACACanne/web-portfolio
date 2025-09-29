@@ -76,7 +76,7 @@ section {
 .home {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: justify;
 }
 
 .home-img img {
@@ -161,8 +161,8 @@ span {
 
 .about {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: justify;
     gap: 2rem;
     background: var(--second-bg-color);
 }
@@ -471,7 +471,7 @@ span {
 .introduction h2 {
     font-size: 3.6rem;
     margin-bottom: 1rem;
-    text-align: left;
+    text-align: justify;
 }
 .introduction span {
     color: var(--main-color);
@@ -491,7 +491,7 @@ span {
 }
 .introduction p {
     margin: 1rem 0;
-    text-align: justify;
+    text-align: left;
 }
 
 
@@ -521,7 +521,7 @@ span {
 .skills-intro {
   font-size: 1.6rem;
   color: var(--text-color);
-  text-align: center;
+  text-align: justify;
   max-width: 800px;
   margin: 0 auto 3rem;
   line-height: 1.8;
