@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Scraper | Case Study</title>
+
+  <link rel="stylesheet" href="../../project.css" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="../../index.html" class="logo">Portfolio</a>
+    <nav class="navbar">
+      <a href="../../index.html">Home</a>
+      <a href="../../about.html">About</a>
+      <a href="../../portfolio.html" class="active">Portfolio</a>
+      <a href="../../blog.html">Blog</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <div class="project-hero-inner">
+      <h1>Web Scraper</h1>
+      <p class="project-subtitle">A Python scraper that extracts structured data from websites for analysis and automation.</p>
+
+      <p class="project-meta">
+        Category: <span>Data Science</span> ·
+        Stack: <span>Python, BeautifulSoup, Requests, CSV, Regex</span>
+      </p>
+
+      <div class="project-hero-links">
+        <a href="#" class="btn">View Notebook</a>
+        <a href="#" class="btn btn-outline">GitHub Repo</a>
+        <a href="../../index.html#contact" class="btn btn-ghost">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="project-section">
+    <h2>Story & Intent</h2>
+    <p>
+      I built this scraper to automate data collection for analysis.  
+      Many datasets don’t exist in clean, downloadable formats — they live on websites, scattered across pages.
+      This project extracts structured information from HTML content and transforms it into a usable dataset.
+    </p>
+
+    <p>
+      The goal was to create a tool that is reliable, adaptable, and capable of handling messy real‑world data.
+    </p>
+  </section>
+
+  <!-- Technical Breakdown -->
+  <section class="project-section">
+    <h2>Technical Breakdown</h2>
+
+    <h3>Scraping Workflow</h3>
+    <p>
+      The scraper follows a modular pipeline:
+    </p>
+
+    <ul class="project-list">
+      <li>Send HTTP requests using <span>Requests</span></li>
+      <li>Parse HTML using <span>BeautifulSoup</span></li>
+      <li>Extract structured elements (titles, prices, links, etc.)</li>
+      <li>Clean and normalise text using Regex</li>
+      <li>Export results to CSV for analysis</li>
+    </ul>
+
+    <h3>Error Handling</h3>
+    <p>
+      Real‑world websites are unpredictable, so I implemented:
+    </p>
+
+    <ul class="project-list">
+      <li>Try/except blocks for failed requests</li>
+      <li>User‑agent headers to avoid blocking</li>
+      <li>Graceful handling of missing fields</li>
+      <li>Rate‑limiting to avoid server overload</li>
+    </ul>
+
+    <h3>Key Features</h3>
+    <ul class="project-list">
+      <li>Scrapes multiple pages automatically</li>
+      <li>Extracts structured fields into a clean dataset</li>
+      <li>Reusable functions for different websites</li>
+      <li>CSV export for downstream analysis</li>
+    </ul>
+  </section>
+
+  <!-- Challenges -->
+  <section class="project-section">
+    <h2>Challenges & Learnings</h2>
+    <p>
+      The biggest challenge was handling inconsistent HTML structures across pages.
+      I learned how to write flexible parsing logic that adapts to missing tags, unusual formatting,
+      and dynamic content.
+    </p>
+
+    <p class="project-quote">
+      “Scraping is less about code — and more about understanding how humans structure information online.”
+    </p>
+  </section>
+
+  <!-- Navigation -->
+  <section class="project-section project-links-section">
+    <h2>Explore More</h2>
+
+    <div class="project-link-buttons">
+      <a href="#" class="btn">View Notebook</a>
+      <a href="#" class="btn btn-outline">View on GitHub</a>
+      <a href="../../portfolio.html" class="btn btn-ghost">← Back to Portfolio</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Aniko Vigh. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

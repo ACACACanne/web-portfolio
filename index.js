@@ -1,116 +1,300 @@
-// ScrollReveal animations
-ScrollReveal({
-  reset: true,
-  distance: '60px',
-  duration: 2500,
-  delay: 400
-});
 
-ScrollReveal().reveal('.heading', { delay: 200, origin: 'top' });
-ScrollReveal().reveal('.skills-grid, .about-section', { delay: 300, origin: 'bottom' });
-ScrollReveal().reveal('.skill-card', { interval: 200, origin: 'right' });
+/* -----------------------------------------
+   PROJECT DATA
+----------------------------------------- */
 
-// Navbar toggle
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+const webProjects = [
+  {
+    title: "Weather App",
+    summary: "A responsive weather dashboard using live API data.",
+    live: "https://weather-application-jet-phi.vercel.app/",
+    github: "https://github.com/ACACACanne/weather-application",
+    page: "projects/web/project-1.html"
+  },
+  {
+    title: "Interactive Quiz App",
+    summary: "A dynamic quiz with animations and scoring logic.",
+    live: "https://acacacanne.github.io/interactive-learning-style-quiz-assignment/",
+    github: "https://github.com/ACACACanne/interactive-learning-style-quiz-assignment",
+    page: "projects/web/project-2.html"
+  },
+  {
+    title: "Portfolio Website",
+    summary: "A cinematic personal portfolio with 3D slider.",
+    live: "#",
+    github: "https://github.com/ACACACanne/web-portfolio",
+    page: "projects/web/project-3.html"
+  },
+  {
+    title: "Caesar Cipher Tool",
+    summary: "Encrypt and decrypt messages using classical ciphers.",
+    live: "https://acacacanne.github.io/project-caesar-cipher/",
+    github: "https://github.com/ACACACanne/project-caesar-cipher",
+    page: "projects/web/project-4.html"
+  },
+  {
+    title: "Recipe Finder",
+    summary: "Search recipes using a public API with filters.",
+    live: "#",
+    github: "#",
+    page: "projects/web/project-5.html"
+  },
+  {
+    title: "Task Manager App",
+    summary: "A clean productivity tool using LocalStorage.",
+    live: "#",
+    github: "#",
+    page: "projects/web/project-6.html"
+  },
+  {
+    title: "Memory Game",
+    summary: "A card‑matching game with animations.",
+    live: "#",
+    github: "#",
+    page: "projects/web/project-7.html"
+  },
+  {
+    title: "Landing Page",
+    summary: "A modern, responsive landing page.",
+    live: "#",
+    github: "#",
+    page: "projects/web/project-8.html"
+  },
+  {
+    title: "Movie Explorer",
+    summary: "Browse movies using a public API.",
+    live: "#",
+    github: "#",
+    page: "projects/web/project-9.html"
+  },
+  {
+    title: "Text Adventure Game",
+    summary: "A story‑driven interactive game.",
+    live: "https://acacacanne.github.io/text-adventure-game-assignment/",
+    github: "https://github.com/ACACACanne/text-adventure-game-assignment",
+    page: "projects/web/project-10.html"
+  }
+];
 
-menuIcon.onclick = () => {
-  menuIcon.classList.toggle('bx-x');
-  navbar.classList.toggle('active');
-};
+const dataProjects = [
+  {
+    title: "Rental Price Prediction",
+    summary: "Machine learning model predicting rental prices.",
+    live: "#",
+    github: "#",
+    page: "projects/data/project-1.html"
+  },
+  {
+    title: "Customer Segmentation",
+    summary: "Clustering analysis for marketing insights.",
+    live: "#",
+    github: "#",
+    page: "projects/data/project-2.html"
+  },
+  {
+    title: "SQL50 Challenge",
+    summary: "50 SQL problems solved with explanations.",
+    live: "#",
+    github: "#",
+    page: "projects/data/project-3.html"
+  },
+  {
+    title: "Sales Forecasting",
+    summary: "Time‑series forecasting using Python.",
+    live: "#",
+    github: "#",
+    page: "projects/data/project-4.html"
+  },
+  {
+    title: "Fraud Detection",
+    summary: "Classification model for fraud detection.",
+    live: "#",
+    github: "#",
+    page: "projects/data/project-5.html"
+  },
+  {
+    title: "Data Cleaning Pipeline",
+    summary: "Automated preprocessing workflow.",
+    live: "#",
+    github: "#",
+    page: "projects/data/project-6.html"
+  },
+  {
+    title: "PowerBI Dashboard",
+    summary: "Interactive business intelligence dashboard.",
+    live: "#",
+    github: "#",
+    page: "projects/data/project-7.html"
+  },
+  {
+    title: "NLP Sentiment Model",
+    summary: "Text sentiment classifier using ML.",
+    live: "#",
+    github: "#",
+    page: "projects/data/project-8.html"
+  },
+  {
+    title: "A/B Testing Analysis",
+    summary: "Statistical experiment evaluation.",
+    live: "#",
+    github: "#",
+    page: "projects/data/project-9.html"
+  },
+  {
+    title: "Web Scraper",
+    summary: "Python scraper for structured data extraction.",
+    live: "#",
+    github: "#",
+    page: "projects/data/project-10.html"
+  }
+];
 
-// Active section link on scroll
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+document.addEventListener("DOMContentLoaded", () => {
 
-window.onscroll = () => {
-  sections.forEach(sec => {
+  /* RENDER PROJECTS */
+  function loadProjects(category) {
+    const container = document.getElementById("project-container");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const list = category === "web" ? webProjects : dataProjects;
+
+    list.forEach((project, index) => {
+      const card = document.createElement("div");
+      card.classList.add("project-card");
+
+      card.innerHTML = `
+        <h3>${project.title}</h3>
+        <p>${project.summary}</p>
+
+        <div class="project-links">
+          <a href="${project.live}" target="_blank">Live Demo</a>
+          <a href="${project.github}" target="_blank">GitHub</a>
+          <a href="${project.page}">Case Study</a>
+          <a href="index.html#contact">Contact Me</a>
+        </div>
+      `;
+
+      container.appendChild(card);
+
+      setTimeout(() => {
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+      }, 100 * index);
+    });
+  }
+
+  /* TAB SWITCHING */
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      loadProjects(btn.dataset.category);
+    });
+  });
+
+  /* DEFAULT: WEB DEVELOPMENT */
+  loadProjects("web");
+
+  /* SCROLLREVEAL */
+  if (typeof ScrollReveal !== "undefined") {
+    ScrollReveal({
+      reset: true,
+      distance: '60px',
+      duration: 2500,
+      delay: 400
+    });
+
+    ScrollReveal().reveal('.heading', { delay: 200, origin: 'top' });
+    ScrollReveal().reveal('.skills-grid, .about-section', { delay: 300, origin: 'bottom' });
+    ScrollReveal().reveal('.skill-card', { interval: 200, origin: 'right' });
+  }
+
+  /* NAVBAR TOGGLE */
+  let menuIcon = document.querySelector('#menu-icon');
+  let navbar = document.querySelector('.navbar');
+
+  if (menuIcon && navbar) {
+    menuIcon.onclick = () => {
+      menuIcon.classList.toggle('bx-x');
+      navbar.classList.toggle('active');
+    };
+  }
+
+  /* ACTIVE NAV LINK ON SCROLL */
+  let sections = document.querySelectorAll('section');
+  let navLinks = document.querySelectorAll('header nav a');
+
+  window.addEventListener('scroll', () => {
     let top = window.scrollY;
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute('id');
 
-    if (top >= offset && top < offset + height) {
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+    sections.forEach(sec => {
+      let offset = sec.offsetTop - 150;
+      let height = sec.offsetHeight;
+      let id = sec.getAttribute('id');
+
+      if (top >= offset && top < offset + height) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          const activeLink = document.querySelector('header nav a[href*=' + id + ']');
+          if (activeLink) activeLink.classList.add('active');
+        });
+      }
+    });
+
+    let header = document.querySelector('header');
+    if (header) {
+      header.classList.toggle('sticky', window.scrollY > 100);
+    }
+
+    if (menuIcon && navbar) {
+      menuIcon.classList.remove('bx-x');
+      navbar.classList.remove('active');
+    }
+  });
+
+  /* TYPED.JS */
+  if (typeof Typed !== "undefined") {
+    new Typed('.multiple-text', {
+      strings: ['Creative Technologist', "Full Stack Developer", "Data Analyst", 'Poetic UI Designer', 'Data-Driven Thinker'],
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 1000,
+      loop: true
+    });
+  }
+
+  /* PAGE FLIP (SINGLE, CLEAN VERSION) */
+  const pages = document.querySelectorAll('.page');
+  if (pages.length > 0) {
+    let currentPage = 0;
+
+    function showPage(index) {
+      pages.forEach((page, i) => {
+        page.style.transform = i === index ? 'rotateY(0deg)' : 'rotateY(-180deg)';
       });
     }
-  });
 
-  // Sticky header
-  let header = document.querySelector('header');
-  header.classList.toggle('sticky', window.scrollY > 100);
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
 
-  // Remove toggle on scroll
-  menuIcon.classList.remove('bx-x');
-  navbar.classList.remove('active');
-};
-
-// Typed.js intro (optional)
-const typed = new Typed('.multiple-text', {
-  strings: ['Creative Technologist', "Full Stack Developer", "Data Analyst", 'Poetic UI Designer', 'Data-Driven Thinker'],
-  typeSpeed: 100,
-  backSpeed: 100,
-  backDelay: 1000,
-  loop: true
-});
-
-const pages = document.querySelectorAll('.page');
-let currentPage = 0;
-
-// If you want to use the "active" class for showing pages:
-function showPage(index) {
-  pages.forEach((page, i) => {
-    page.classList.remove('active');
-    if (i === index) {
-      page.classList.add('active');
+    if (nextBtn) {
+      nextBtn.onclick = () => {
+        currentPage = (currentPage + 1) % pages.length;
+        showPage(currentPage);
+      };
     }
-  });
-}
 
-document.getElementById('next')?.addEventListener('click', () => {
-  currentPage = (currentPage + 1) % pages.length;
-  showPage(currentPage);
+    if (prevBtn) {
+      prevBtn.onclick = () => {
+        currentPage = (currentPage - 1 + pages.length) % pages.length;
+        showPage(currentPage);
+      };
+    }
+
+    showPage(currentPage);
+  }
+
 });
-
-document.getElementById('prev')?.addEventListener('click', () => {
-  currentPage = (currentPage - 1 + pages.length) % pages.length;
-  showPage(currentPage);
-});
-showPage(currentPage);
-
-// If you want to use the rotateY effect for showing pages, you can use the following instead:
-// function showPage(index) {
-//   pages.forEach((page, i) => {
-//     page.style.transform = i === index ? 'rotateY(0deg)' : 'rotateY(-180deg)';
-//   });
-// }
-
-// document.querySelector('.next')?.onclick = () => {
-//   currentPage = (currentPage + 1) % pages.length;
-//   showPage(currentPage);
-// };
-
-// document.querySelector('.prev')?.onclick = () => {
-//   currentPage = (currentPage - 1 + pages.length) % pages.length;
-//   showPage(currentPage);
-// };
-
-function showPage(index) {
-  pages.forEach((page, i) => {
-    page.style.transform = i === index ? 'rotateY(0deg)' : 'rotateY(-180deg)';
-  });
-}
-
-document.querySelector('.next').onclick = () => {
-  currentPage = (currentPage + 1) % pages.length;
-  showPage(currentPage);
-};
-
-document.querySelector('.prev').onclick = () => {
-  currentPage = (currentPage - 1 + pages.length) % pages.length;
-  showPage(currentPage);
-};
-
-  
