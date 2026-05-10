@@ -4,135 +4,95 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aniko Vigh Portfolio</title>
+  <title>Aniko Vigh | Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- Header -->
-   <header class="header">
-     <a href="index.html" class="logo">Portfolio</a>
-     <i class="bxr bx-menu" id="menu-icon"></i>
-     <nav class="navbar">
-       <a href="index.html" class="active">Home</a>
-       <a href="about.html">About</a>
-       <a href="portfolio.html">Portfolio</a>
-       <a href="#contact">Contact</a>
-     </nav>
-   </header>
+  <header class="header">
+    <a href="index.html" class="logo">Portfolio</a>
+    <i class="bxr bx-menu" id="menu-icon"></i>
+    <nav class="navbar">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
   <!-- Home Section -->
-   <section class="home" id="home">
+  <section class="home">
     <div class="home-content">
-      <h3>Hello, It's Me</h3>
+      <h3>Hello, I'm</h3>
       <h1>Aniko Vigh</h1>
       <h3>And I'm a <span class="multiple-text"></span></h3>
-      <p>I'm Aniko, a creative technologist blending immersive web development with data-driven insight.
-        I build experiences that are intuitive, inclusive, and emotionally resonant.</p>
+      <p>
+        I build cinematic, story‑driven digital experiences — blending UI/UX, web development,
+        and data analytics into clean, modern, emotionally resonant interfaces.
+      </p>
+
+      <a href="portfolio.html" class="btn">Explore My Work</a>
+      <a href="blog.html" class="btn btn-outline">Read My Journal</a>
+      <a href="https://1drv.ms/b/c/4dab1b9d2b17ba9b/ET9R2uJ2vClEq1lNAFxWxRsBGEwdwqtvUoiJ21CJi5C6JA" class="btn" target="_blank">Download CV</a>
+    </div>
       <div class="social-media">
         <a href="https://www.linkedin.com/in/aniko-vigh-22b496291" target="_blank"><i class="bx bxl-linkedin"></i></a>
         <a href="https://github.com/ACACACanne" target="_blank"><i class="bx bxl-github"></i></a>
+        
+    </div>
       </div>
-
-      <a href="https://1drv.ms/b/c/4dab1b9d2b17ba9b/ET9R2uJ2vClEq1lNAFxWxRsBGEwdwqtvUoiJ21CJi5C6JA" class="btn" target="_blank">Download CV</a>
     </div>
 
     <div class="home-img">
-      <img src="assets/pictures/portfolio_picture.png" alt="Aniko Vigh smiling in a workspace">
+      <img src="assets/pictures/picture_portfolio.jpg" alt="Profile Image of Aniko Vigh smilling in a workspace">
     </div>
-   </section> 
+  </section>
 
-    <!--About Section-->
-    <section class="about" id="about">
-      <div class="about-img">
-        <img src="assets/pictures/about_me_picture.png" alt="Aniko Vigh working on her laptop">
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me</span></h2>
+
+    <form action="#">
+      <div class="input-box">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
       </div>
-      <div class="about-content">
-      <h2 class="heading">About <span>Me</span></h2>
 
-      <h3>Shaped by <span>Studies</span> & <span>Creative Spirit!</span></h3>
-      <p>I’m Aniko Vigh, a <span>Developer</span> and a data-driven <span>Analyst</span> who sees code not just as logic, but as language, an instrument for storytelling, structure, and soul. <br /> My journey through my Studies taught me to navigate complexity with clarity, to find patterns in chaos, and to build systems that speak with purpose. I sharpened my craft—transforming curiosity into capability, and theory into touchable design.
-      <br />I build with intention. I design with empathy. Whether I’m animating a flower, or visualizing data that reveals hidden truths, I strive to make the digital feel human. <br />My work lives at the intersection of precision and poetry—modular, responsive, and quietly cinematic. Every line of code is a brushstroke. Every interface, a canvas. And every project, a chance to connect.</p>
-      <a href="about.html" class="btn">Read More</a>
+      <div class="input-box">
+        <input type="number" placeholder="Mobile Number">
+        <input type="text" placeholder="Subject">
       </div>
-    </section>
 
-    <!--Portfolio Section-->
-    <section class="portfolio" id="portfolio">
-    <h2 class="heading">Latest <span>Projects</span></h2>
-    <div class="btn-box">
-        <a href="portfolio.html" class="btn-view">See more Projects</a>
+      <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
+      <input type="submit" value="Send Message" class="btn">
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>© 2026 Aniko Vigh. All rights reserved.</p>
     </div>
-
-    <div class="portfolio-container">
-      <div class="portfolio-box">
-        <img src="assets/pictures/portfolio1.jpg" alt="Project 1">
-        <div class="portfolio-layer">
-          <h4>Weather App</h4>
-          <p>An application that provides weather updates and forecasts.</p>
-          <a href="https://weather-application-jet-phi.vercel.app/" target="_blank"><i class="bx bx-link-external"></i></a>
-          
-        </div>
-      </div>
-      <div class="portfolio-box">
-        <img src="assets/pictures/portfolio2.jpg" alt="Project 2">
-        <div class="portfolio-layer">
-          <h4>Interactive Quiz</h4>
-          <p>An application with a drag and drop Quiz.</p>
-          <a href="https://acacacanne.github.io/interactive-learning-style-quiz-assignment/" target="_blank"><i class="bx bx-link-external"></i></a>
-        </div>
-      </div>
-      <div class="portfolio-box">
-        <img src="assets/pictures/portfolio3.jpg" alt="Project 3">
-        <div class="portfolio-layer">
-          <h4>Text Adventure Game</h4>
-          <p>An interactive text-based adventure game.</p>
-          <a href="https://acacacanne.github.io/text-adventure-game-assignment/" target="_blank"><i class="bx bx-link-external"></i></a>
-        </div>
-      </div>
-    </section>
-
-
-    <!--Contact Section-->
-    <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me!</span></h2>
-      <div class="contact-container">
-        <form action="https://formsubmit.co/contact@anikovighportfolio.com" method="POST">
-          <div class="input-box">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-          </div>
-          <div class="input-box">
-            <input type="number" name="mobile" placeholder="Mobile Number" required>
-            <input type="text" name="subject" placeholder="Email Subject" required>
-          </div>
-          <textarea name="message" id="" placeholder="Your Message" class="box" cols="30" rows="10"></textarea>
-          <input type="submit" value="Send Message" class="btn">
-        </form>
-      </div>
-    </section>
-
-
-    <!-- Footer Section-->
-    <footer class="footer">
-      <div class="footer-text">
-        <p>Copyright © 2025 Aniko Vigh. All rights reserved.</p>
-      </div>
-      <div class="footer-iconTop">
-        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
-      </div>
-    </footer>
-        
-    <!--  Scroll reveal-->
+    <div class="footer-iconTop">
+      <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
+    </div>
+  </footer>
+   <!--  Scroll reveal-->
     <script src="https://unpkg.com/scrollreveal"></script>
     
     <!--typed js-->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
   <script src="index.js"></script>
+
 </body>
+  <script src="animations.js"></script>
 </html>

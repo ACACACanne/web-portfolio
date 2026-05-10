@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rental Price Prediction | Case Study</title>
+
+  <link rel="stylesheet" href="../../project.css" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <header class="header">
+    <a href="../../index.html" class="logo">Portfolio</a>
+    <nav class="navbar">
+      <a href="../../index.html">Home</a>
+      <a href="../../about.html">About</a>
+      <a href="../../portfolio.html" class="active">Portfolio</a>
+      <a href="../../blog.html">Blog</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="project-hero">
+    <div class="project-hero-inner">
+      <h1>Rental Price Prediction</h1>
+      <p class="project-subtitle">A machine learning model predicting rental prices using real‑world housing data.</p>
+
+      <p class="project-meta">
+        Category: <span>Data Science</span> ·
+        Stack: <span>Python, Pandas, Scikit‑Learn, Matplotlib</span>
+      </p>
+
+      <div class="project-hero-links">
+        <a href="#" target="_blank" class="btn">View Notebook</a>
+        <a href="#" target="_blank" class="btn btn-outline">GitHub Repo</a>
+        <a href="../../index.html#contact" class="btn btn-ghost">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>Story & Intent</h2>
+    <p>
+      Housing affordability is a global issue, and I wanted to explore how data can help us
+      understand rental markets. This project predicts rental prices based on features like
+      location, size, number of rooms, and amenities — turning raw housing data into actionable insight.
+    </p>
+  </section>
+
+  <section class="project-section">
+    <h2>Technical Breakdown</h2>
+
+    <h3>Data Pipeline</h3>
+    <p>
+      The dataset was cleaned using Pandas, with missing values imputed and categorical variables
+      encoded using One‑Hot Encoding. Outliers were handled using IQR filtering.
+    </p>
+
+    <h3>Modeling</h3>
+    <p>
+      I tested several models:
+    </p>
+
+    <ul class="project-list">
+      <li>Linear Regression</li>
+      <li>Random Forest Regressor</li>
+      <li>Gradient Boosting Regressor</li>
+    </ul>
+
+    <p>
+      The best performance came from Gradient Boosting, achieving strong RMSE and R² scores.
+    </p>
+
+    <h3>Key Features</h3>
+    <ul class="project-list">
+      <li>Full preprocessing pipeline</li>
+      <li>Feature importance analysis</li>
+      <li>Model comparison and evaluation</li>
+      <li>Visualisations for insights</li>
+    </ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Challenges & Learnings</h2>
+    <p>
+      The biggest challenge was dealing with multicollinearity and skewed distributions.
+      I learned how to apply transformations and regularisation techniques to stabilise the model.
+    </p>
+  </section>
+
+  <section class="project-section project-links-section">
+    <h2>Explore More</h2>
+
+    <div class="project-link-buttons">
+      <a href="#" target="_blank" class="btn">View Notebook</a>
+      <a href="#" target="_blank" class="btn btn-outline">View on GitHub</a>
+      <a href="../../portfolio.html" class="btn btn-ghost">← Back to Portfolio</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Aniko Vigh. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

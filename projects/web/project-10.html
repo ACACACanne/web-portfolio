@@ -1,0 +1,121 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Adventure Game | Case Study</title>
+
+  <link rel="stylesheet" href="../../project.css" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="../../index.html" class="logo">Portfolio</a>
+    <nav class="navbar">
+      <a href="../../index.html">Home</a>
+      <a href="../../about.html">About</a>
+      <a href="../../portfolio.html" class="active">Portfolio</a>
+      <a href="../../blog.html">Blog</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <div class="project-hero-inner">
+      <h1>Text Adventure Game</h1>
+      <p class="project-subtitle">A story‑driven interactive game built with branching logic and dynamic UI updates.</p>
+
+      <p class="project-meta">
+        Category: <span>Web Development</span> ·
+        Stack: <span>HTML, CSS, JavaScript</span>
+      </p>
+
+      <div class="project-hero-links">
+        <a href="#" target="_blank" class="btn">Live Demo</a>
+        <a href="#" target="_blank" class="btn btn-outline">GitHub Repo</a>
+        <a href="../../index.html#contact" class="btn btn-ghost">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="project-section">
+    <h2>Story & Intent</h2>
+    <p>
+      I’ve always loved interactive fiction — the kind of stories where every choice feels meaningful.
+      This project was my way of exploring narrative design through code, building a branching adventure
+      where the player’s decisions shape the outcome.  
+      It blends storytelling, logic, and UI design into a small but expressive interactive world.
+    </p>
+  </section>
+
+  <!-- Technical Breakdown -->
+  <section class="project-section">
+    <h2>Technical Breakdown</h2>
+
+    <h3>Architecture</h3>
+    <p>
+      The game is powered by a lightweight JavaScript engine that loads scenes from a structured data object.
+      Each scene contains:
+    </p>
+
+    <ul class="project-list">
+      <li>A description</li>
+      <li>A set of choices</li>
+      <li>Links to the next scenes</li>
+    </ul>
+
+    <p>
+      When the player selects a choice, the UI updates instantly, replacing the text and options without
+      reloading the page. This creates a smooth, immersive reading experience.
+    </p>
+
+    <h3>Key Features</h3>
+    <ul class="project-list">
+      <li>Branching narrative system</li>
+      <li>Dynamic UI updates based on player choices</li>
+      <li>Replayable story paths</li>
+      <li>Lightweight, responsive design</li>
+      <li>Modular scene structure for easy expansion</li>
+    </ul>
+  </section>
+
+  <!-- Challenges -->
+  <section class="project-section">
+    <h2>Challenges & Learnings</h2>
+    <p>
+      The biggest challenge was keeping the story logic readable and scalable.  
+      As the number of branches grew, I needed a clean way to structure scenes so they remained easy to edit.
+      I learned how to design a modular narrative engine using simple data structures, making it easy to add
+      new chapters or endings without rewriting the core logic.
+    </p>
+
+    <p class="project-quote">
+      “Good interactive fiction is 50% story, 50% architecture.”
+    </p>
+  </section>
+
+  <!-- Navigation -->
+  <section class="project-section project-links-section">
+    <h2>Explore More</h2>
+
+    <div class="project-link-buttons">
+      <a href="#" target="_blank" class="btn">View Live Project</a>
+      <a href="#" target="_blank" class="btn btn-outline">View on GitHub</a>
+      <a href="../../portfolio.html" class="btn btn-ghost">← Back to Portfolio</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Aniko Vigh. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

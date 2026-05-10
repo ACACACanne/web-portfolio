@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast App | Case Study</title>
+
+  <link rel="stylesheet" href="../../project.css" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="../../index.html" class="logo">Case Study</a>
+    <nav class="navbar">
+      <a href="../../index.html">Home</a>
+      <a href="../../about.html">About</a>
+      <a href="../../portfolio.html" class="active">Portfolio</a>
+      <a href="../../blog.html">Blog</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero full-width">
+    <h1>Weather Forecast App</h1>
+    <p class="project-subtitle">
+      A responsive, modular weather experience built with React and Tailwind, blending data, design, and poetic storytelling.
+    </p>
+    <h2>Key Features</h2>
+        <p class="project-subtitle">
+            Search any city and get current, hourly, and daily forecasts.
+        </p>
+        <p class="project-subtitle">
+            Weather-based background images and silhouette overlays.
+        </p>
+        <p class="project-subtitle">
+            Poetic Weather summaries with practical advice.
+        </p>
+        <p class="project-subtitle">
+            Fully responsive design with collapsible mobile controls.
+        </p>
+        <p class="project-subtitle">
+            Modular components for scalability and maintainability.
+        </p>
+
+    <p class="project-meta">
+      Category: <span>Web Development</span> ·
+      Stack: <span>Next.js, React, Tailwind CSS, Open‑Meteo API</span>
+    </p>
+
+    <div class="project-hero-links">
+      <a href="https://weather-application-jet-phi.vercel.app/" target="_blank" class="btn">Live Demo</a>
+      <a href="https://github.com/ACACACanne/weather-app" target="_blank" class="btn btn-outline">GitHub Repo</a>
+      <a href="../../portfolio.html" class="btn btn-ghost">← Portfolio</a>
+    </div>
+  </section>
+
+  <!-- Project Overview-->
+  <section class="project-flex full-width">
+    <div class="project-left">
+      <img src="../../assets/pictures/portfolio1_hero.jpg" class="project-image" alt="Weather App Screenshot">
+    </div>
+
+    <div class="project-right">
+      <h2>Project Overview</h2>
+      <p>
+        The Weather Forecast App began as a vision to create something more than a dashboard, 
+        an experience that feels atmospheric, expressive, and emotionally resonant.
+      </p>
+      <p>
+        It fetches real‑time weather data for any city worldwide and transforms it into a
+        visual and narrative experience with dynamic backgrounds, silhouettes, and poetic summaries.
+      </p>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE OVERVIEW -->
+  <section class="project-flex full-width">
+    <div class="project-left">
+      <img src="../../assets/pictures/portfolio1_diagram1.jpg" class="project-image" alt="Architecture Diagram">
+    </div>
+
+    <div class="project-right">
+      <h2>Architecture Overview</h2>
+      <p>
+        Built with Next.js and Tailwind CSS, the app uses modular components for scalability.
+      </p>
+      <p>
+        This diagram shows how the Weather Forecast App processes user input and displays results.
+      </p>
+      <p>
+        The user enters a city name, which the Search Component sends to the Open‑Meteo API to fetch weather data.
+The API returns a JSON response, parsed and passed to the Forecast Component.
+The Forecast Component renders current, hourly, and daily forecasts while coordinating with the Background Engine for dynamic visuals.
+Simultaneously, the Poetic Summary Engine generates expressive text to accompany the forecast.
+All components interact within the Next.js UI, creating a seamless, modular, and visually rich experience.
+Overall, the architecture blends data processing and creative presentation for an engaging weather interface.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMPONENT STRUCTURE -->
+  <section class="project-flex full-width">
+    <div class="project-left">
+      <img src="../../assets/pictures/portfolio1_diagram2.jpg" class="project-image" alt="Component Diagram">
+    </div>
+
+    <div class="project-right">
+      <h2>Component Structure</h2>
+      <p>
+        The WeatherService component fetches data from the Open‑Meteo API using a REST request and receives a JSON response.
+The Parser processes this data through functions like parseCurrent(), parseHourly(), and parseDaily() to extract weather conditions.
+These parsed conditions are sent to the SummaryEngine and BackgroundEngine, which generate poetic summaries and select dynamic background images.
+The UI Layer then displays this information through components such as Header, ForecastCard, HourlyForecast, DailyForecast, SearchBar, and Footer.
+Each layer communicates smoothly, ensuring modularity and clear separation between data handling and presentation.
+Overall, the structure highlights a clean, scalable design that blends technical precision with creative output.
+      </p>
+    </div>
+  </section>
+
+  <!-- DATA FLOW -->
+  <section class="project-flex full-width">
+    <div class="project-left">
+      <img src="../../assets/pictures/portfolio1_diagram3.jpg" class="project-image" alt="Sequency Diagram">
+    </div>
+
+    <div class="project-right">
+      <h2>Data Flow</h2>
+      <p>
+        The sequence diagram shows how the app processes a weather search from the moment the user enters a city.
+The SearchBar sends the request to the WeatherService, which calls the external API to retrieve forecast data.
+The API returns a JSON response, which is passed to the Parser to extract structured weather conditions.
+These conditions are forwarded to both the SummaryEngine and BackgroundEngine to generate a poetic summary and select a matching background image.
+The WeatherService then returns the combined forecast data, summary, and visuals back to the UI.
+Finally, the UI renders the complete weather experience for the user in a single, seamless flow.
+      </p>
+    </div>
+  </section>
+
+  
+
+  <!-- REFLECTION -->
+  <section class="reflection full-width">
+    <h2>Reflection</h2>
+    <p>
+      Building this app was a journey of blending technical precision with artistic expression.
+      I wanted more than just a weather dashboard — I envisioned an experience that feels alive,
+      poetic, and emotionally resonant.
+    </p>
+
+    <h3>What I Learned</h3>
+    <ul class="project-list">
+      <li><strong>Modular Design:</strong> Breaking the app into reusable components made it easier to maintain and scale.</li>
+      <li><strong>Responsive Layouts:</strong> Designing for all devices taught me how to balance flexibility with clarity.</li>
+      <li><strong>Poetic UI:</strong> Writing weather summaries that evoke emotion helped me explore storytelling through code.</li>
+    </ul>
+
+    <blockquote class="project-quote">
+      “This app is more than a forecast — it’s a reflection of how I see technology:  
+      a canvas for creativity, clarity, and connection.”
+    </blockquote>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>© 2026 Aniko Vigh. All rights reserved.</p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
+    </div>
+  </footer>
+   <!--  Scroll reveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <!--typed js-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <script src="index.js"></script>
+
+</body>
+  <script src="animations.js"></script>
+
+</body>
+</html>

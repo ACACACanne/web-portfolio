@@ -12,138 +12,101 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   
 </head>
-<body >
+
+<body>
+
   <!-- Header -->
-   <header class="header">
-     <a href="index.html" class="logo">Portfolio</a>
-     <i class="bxr bx-menu" id="menu-icon"></i>
-     <nav class="navbar">
-       <a href="index.html" class="active">Home</a>
-       <a href="about.html">About</a>
-       <a href="portfolio.html">Portfolio</a>
-       <a href="index.html">Contact</a>
-     </nav>
-   </header>
-    <section class="bg: #323946">
-     <div class="banner">
-        <div class="slider" style="--quantity: 10;">
-            <div class ="item" style="--position: 1"><img src="assets/pictures/portfolio2.jpg" alt="Portfolio.">
-              <!--slider layer-->
-                <div class="slider-layer">
-                <h4>Weather App</h4>
-                <p>An application that provides weather updates and forecasts.</p>
-                <a href="https://weather-application-jet-phi.vercel.app/" target="_blank"><i class="bx bx-info-circle"></i></a>
-              </div> 
-            </div>
+  <header class="header">
+    <a href="index.html" class="logo">Portfolio</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
 
-            <div class ="item" style="--position: 2"><img src="assets/pictures/portfolio2.jpg" alt="A picture of the text based game project">
-              <!--slider layer-->
-                <div class="slider-layer">
-                <h4>Ceasar Cipher</h4>
-                <p>An application that implements encryption technique.</p>
-                <a href="https://acacacanne.github.io/project-caesar-cipher/" target="_blank"><i class="bx bx-info-circle"></i></a>
-                </div>
-            </div>
+  <!-- Category Selector -->
+  <section class="portfolio-selector">
+    <h2 class="heading">Explore My Work</h2>
 
-            <div class ="item" style="--position: 3"><img src="assets/pictures/portfolio2.jpg" alt="A picture of the text based game project">
-              <!--slider layer-->
-                <div class="slider-layer">
-                <h4>Text Adventure Game</h4>
-                <p>An interactive text-based adventure game.</p>
-                <a href="https://acacacanne.github.io/text-adventure-game-assignment/" target="_blank"><i class="bx bx-info-circle"></i></a>
-                </div>
-            </div>
+    <div class="category-tabs">
+      <button class="tab-btn active" data-category="web">Web Development</button>
+      <button class="tab-btn" data-category="data">Data Projects</button>
+    </div>
+  </section>
 
-            <div class ="item" style="--position: 4"><img src="assets/pictures/portfolio2.jpg" alt="A picture of the text based game project">
-              <!--slider layer-->
-                <div class="slider-layer">
-                <h4>Interactive Quiz</h4>
-                <p>An engaging quiz application with drag and drop questions.</p>
-                <a href="https://acacacanne.github.io/interactive-learning-style-quiz-assignment/" target="_blank"><i class="bx bx-info-circle"></i></a>
-                </div>
-            </div>
+  <!-- Dynamic Project Grid -->
+  <section class="project-section">
+    <div id="project-container" class="project-grid"></div>
+  </section>
 
-            <div class ="item" style="--position: 5"><img src="assets/pictures/portfolio2.jpg" alt="A picture of the text based game project">
-              <!--slider layer-->
-                <div class="slider-layer">
-                <h4>Project Title</h4>
-                <p>Brief description of the project.</p>
-                <a href="#"><i class="bx bx-info-circle"></i></a>
-                </div>
-            </div>
+  <!-- Featured Slider -->
+  <section class="featured">
+    <h2 class="heading">Featured <span>Projects</span></h2>
 
-            <div class ="item" style="--position: 6"><img src="assets/pictures/portfolio2.jpg" alt="A picture of the text based game project">
-              <!--slider layer-->
-                <div class="slider-layer">
-                <h4>Project Title</h4>
-                <p>Brief description of the project.</p>
-                <a href="#"><i class="bx bx-info-circle"></i></a>
-                </div>
-            </div>
+    <div class="banner">
+      <div class="slider" style="--quantity: 10;">
 
-            <div class ="item" style="--position: 7"><img src="assets/pictures/portfolio2.jpg" alt="A picture of the text based game project">
-              <!--slider layer-->
-                <div class="slider-layer">
-                <h4>Project Title</h4>
-                <p>Brief description of the project.</p>
-                <a href="#"><i class="bx bx-info-circle"></i></a>
-                </div>
-            </div>
-           
-            <div class ="item" style="--position: 8"><img src="assets/pictures/portfolio2.jpg" alt="A picture of the text based game project">
-                <!--slider layer-->
-                    <div class="slider-layer">
-                    <h4>Project Title</h4>
-                    <p>Brief description of the project.</p>
-                    <a href="#"><i class="bx bx-info-circle"></i></a>
-                    </div>
-            </div>
-
-            <div class ="item" style="--position: 9"><img src="assets/pictures/portfolio2.jpg" alt="A picture of the text based game project">
-              <!--slider layer-->
-                <div class="slider-layer">
-                <h4>Project Title</h4>
-                <p>Brief description of the project.</p>
-                <a href="#"><i class="bx bx-info-circle"></i></a>
-                </div>
-            </div>
-
-            <div class ="item" style="--position: 10"><img src="assets/pictures/portfolio2.jpg" alt="A picture of the text based game project">
-              <!--slider layer-->
-                <div class="slider-layer">
-                <h4>Project Title</h4>
-                <p>Brief description of the project.</p>
-                <a href="#"><i class="bx bx-info-circle"></i></a>
-                </div>
-            </div>
+        <div class="item" style="--position: 1">
+          <img src="assets/pictures/portfolio1.jpg">
         </div>
-        <div class="content">
-            <h1 data-content="Aniko Vigh">Aniko Vigh</h1>
-            <div class="autor">
-                <h3>See More</h3>
-                <p><a href="https://github.com/ACACACanne" target="_blank">GitHub</a></p>
-                <p><a href="https://www.linkedin.com/in/aniko-vigh" target="_blank">LinkedIn</a></p>
-            </div>
-            </div>
-            <div class="model">
 
-            </div>
+        <div class="item" style="--position: 2">
+          <img src="assets/pictures/portfolio2.jpg">
         </div>
-     </div>
- </section>
 
+        <div class="item" style="--position: 3">
+          <img src="assets/pictures/portfolio3.jpg">
+        </div>
 
+        <div class="item" style="--position: 4">
+          <img src="assets/pictures/portfolio4.jpg">
+        </div>
 
-<!-- Footer Section-->
-    <footer class="footer">
-      <div class="footer-text">
-        <p>Copyright © 2025 Aniko Vigh. All rights reserved.</p>
+        <div class="item" style="--position: 5">
+          <img src="assets/pictures/portfolio5.jpg">
+        </div>
+
+        <div class="item" style="--position: 6">
+          <img src="assets/pictures/portfolio6.jpg">
+        </div>
+
+        <div class="item" style="--position: 7">
+          <img src="assets/pictures/portfolio2.jpg">
+        </div>
+
+        <div class="item" style="--position: 8">
+          <img src="assets/pictures/portfolio3.jpg">
+        </div>
+
+        <div class="item" style="--position: 9">
+          <img src="assets/pictures/portfolio1.jpg">
+        </div>
+
+        <div class="item" style="--position: 10">
+          <img src="assets/pictures/portfolio10.jpg">
+        </div>
+
       </div>
-      <div class="footer-iconTop">
-        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
-      </div>
-    </footer>
-        
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>© 2026 Aniko Vigh. All rights reserved.</p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
+    </div>
+  </footer>
+   <!--  Scroll reveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <!--typed js-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
   <script src="index.js"></script>
 </body>
