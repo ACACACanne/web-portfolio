@@ -88,20 +88,23 @@
   <section class="contact" id="contact">
     <h2 class="heading">Contact <span>Me</span></h2>
 
-    <form action="#">
-      <div class="input-box">
-        <input type="text" placeholder="Full Name">
-        <input type="email" placeholder="Email Address">
-      </div>
+    <form id="contact-form">
+  <div class="input-box">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+  </div>
 
-      <div class="input-box">
-        <input type="number" placeholder="Mobile Number">
-        <input type="text" placeholder="Subject">
-      </div>
+  <div class="input-box">
+    <input type="text" id="phone" placeholder="Mobile Number">
+    <input type="text" id="subject" placeholder="Subject" required>
+  </div>
 
-      <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
-      <input type="submit" value="Send Message" class="btn">
-    </form>
+  <textarea id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+
+  <button type="submit" class="btn">Send Message</button>
+
+  <p id="form-status" class="form-status"></p>
+</form>
   </section>
   <!-- Footer -->
   <footer class="footer">
@@ -119,6 +122,41 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
   <script src="index.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("yWFYKXcEPDUrqTG8-");
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const params = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value
+    };
+
+    const status = document.getElementById("form-status");
+
+    emailjs.send("service_xx1x8nf", "template_pvvoj2i", params  )
+      .then(() => {
+        status.textContent = "Your message has been sent successfully.";
+        status.classList.add("show");
+
+        // Clear form
+        document.getElementById("contact-form").reset();
+
+        setTimeout(() => status.classList.remove("show"), 4000);
+      })
+      .catch(() => {
+        status.textContent = "Something went wrong. Please try again.";
+        status.classList.add("show");
+        setTimeout(() => status.classList.remove("show"), 4000);
+      });
+  });
+</script>
 
 </body>
   <script src="animations.js"></script>
