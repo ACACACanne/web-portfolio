@@ -21,6 +21,7 @@
 body {
   background: var(--bg-color);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 section {
@@ -42,7 +43,6 @@ section {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  margin-bottom: 2rem;
 }
 
 .header.sticky {
@@ -53,12 +53,16 @@ section {
   font-size: 2.5rem;
   color: var(--text-color);
   font-weight: 600;
-  cursor: default;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 .navbar a {
   font-size: 1.7rem;
-  margin-left: 4rem;
   color: var(--text-color);
   transition: 0.3s ease;
 }
@@ -72,13 +76,7 @@ section {
   font-size: 3.6rem;
   color: var(--text-color);
   display: none;
-}
-
-.heading {
-  text-align: center;
-  font-size: 4.5rem;
-  color: var(--main-color);
-  margin-bottom: 2rem;
+  cursor: pointer;
 }
 
 /* -----------------------------------------
@@ -89,10 +87,11 @@ section {
   justify-content: center;
   align-items: center;
   gap: 4rem;
+  flex-wrap: wrap;
 }
 
 .home-img img {
-  width: 35vw;
+  width: min(35vw, 400px);
   animation: floatImage 4s ease-in-out infinite;
   border-radius: 10%;
   box-shadow: 0 0 2rem var(--main-color);
@@ -108,6 +107,10 @@ section {
   100% {
     transform: translateY(0);
   }
+}
+
+.home-content {
+  max-width: 600px;
 }
 
 .home-content h3 {
@@ -138,7 +141,6 @@ span {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 /* -----------------------------------------
@@ -150,12 +152,11 @@ span {
   align-items: center;
   width: 4rem;
   height: 4rem;
-  background: transparent;
   border: 0.2rem solid var(--main-color);
   border-radius: 50%;
   font-size: 2rem;
   color: var(--main-color);
-  margin: 3rem 1.5rem 3rem 0;
+  margin: 3rem 1.5rem 0 0;
   transition: 0.5s ease;
 }
 
@@ -179,7 +180,12 @@ span {
   letter-spacing: 0.1rem;
   font-weight: 600;
   transition: 0.5s ease;
-  margin-top: 2rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
 }
 
 .btn:hover {
@@ -194,17 +200,23 @@ span {
   justify-content: center;
   align-items: center;
   gap: 4rem;
+  flex-wrap: wrap;
 }
 
 .about-img img {
-  width: 35vw;
+  width: min(35vw, 400px);
   border-radius: 1rem;
   box-shadow: 0 0 2rem var(--main-color);
+}
+
+.about-content {
+  max-width: 700px;
 }
 
 .about-content h2 {
   text-align: left;
   line-height: 1.2;
+  font-size: 3.2rem;
 }
 
 .about-content h3 {
@@ -221,6 +233,13 @@ span {
 /* -----------------------------------------
    CONTACT SECTION
 ----------------------------------------- */
+.contact .heading {
+  text-align: center;
+  width: 100%;
+  font-size: 4.5rem; /* same as your global heading */
+  margin-bottom: 3rem;
+}
+
 .contact form {
   max-width: 70rem;
   margin: 1rem auto;
@@ -231,6 +250,7 @@ span {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 2%;
 }
 
 .contact form .input-box input,
@@ -258,7 +278,6 @@ span {
   color: var(--main-color);
   opacity: 0;
   transition: 0.4s ease;
-  text-align: center;
 }
 
 .form-status.show {
@@ -274,6 +293,8 @@ span {
   align-items: center;
   padding: 2rem 9%;
   background: var(--second-bg-color);
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .footer-text {
@@ -300,14 +321,10 @@ span {
 }
 
 /* -----------------------------------------
-   RESPONSIVE
+   RESPONSIVE BREAKPOINTS
 ----------------------------------------- */
-@media (max-width: 1200px) {
-  html {
-    font-size: 55%;
-  }
-}
 
+/* Large tablets */
 @media (max-width: 991px) {
   .header {
     padding: 2rem 4%;
@@ -317,29 +334,60 @@ span {
   }
 }
 
+/* Tablets + Mobile */
 @media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: var(--bg-color);
+    width: 250px;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+    transition: 0.3s ease;
+  }
+
+  .navbar.active {
+    right: 0;
+  }
+
   .home,
   .about {
     flex-direction: column;
+    text-align: center;
   }
+
   .home-img img,
   .about-img img {
     width: 70vw;
   }
+
+  .home-content h1 {
+    font-size: 4.2rem;
+  }
+
+  .home-content p {
+    font-size: 2rem;
+  }
 }
 
+/* Small mobile */
 @media (max-width: 450px) {
   html {
     font-size: 50%;
   }
+
   .contact form .input-box input {
     width: 100%;
   }
 }
 
-/* -----------------------------------------
-   FADE ANIMATION
------------------------------------------ */
+/* Fade animation */
 .fade {
   opacity: 0;
   transform: translateY(20px);
