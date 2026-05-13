@@ -252,6 +252,19 @@ span {
   resize: none;
 }
 
+.form-status {
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  color: var(--main-color);
+  opacity: 0;
+  transition: 0.4s ease;
+  text-align: center;
+}
+
+.form-status.show {
+  opacity: 1;
+}
+
 /* -----------------------------------------
    FOOTER
 ----------------------------------------- */
