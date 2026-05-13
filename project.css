@@ -1,177 +1,214 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
 
-.logo {
-    font-size: 2.5rem;
-    color: var(--text-color);
-    font-weight: 600;
-    
-    cursor: default;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
 }
 
+:root {
+  --bg-color: #1f242d;
+  --second-bg-color: #323946;
+  --main-color: #0ef;
+  --text-color: #fff;
+}
 
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
 
 section {
-    margin: 0 !important;
-    padding-top: auto;
-    padding-bottom: 0 !important;
-}
-/* HERO SECTION */
-.project-hero {
-  text-align: center;
-  padding: 0.5rem;
+  padding: 10rem 9% 2rem;
+  min-height: 10vh;
+  margin-bottom: 4rem;
 }
 
-.project-hero h1 {
-  font-size: 4.2rem;
-  color: var(--main-color);
-  margin-bottom: 1rem;
-  margin-top: 8rem;
-}
-
-.project-subtitle {
-  font-size: 1.6rem;
-  color: #ccc;
-  margin-bottom: 1.5rem;
-}
-
-.project-meta {
-  font-size: 1.4rem;
-  color: #aaa;
-  margin-bottom: 2.5rem;
-}
-
-.project-meta span {
-  color: var(--main-color);
-}
-
-.project-hero-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-}
-
-/* -----------------------------------------
-   FLEX SECTIONS
------------------------------------------ */
-
-.project-flex {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 4rem;
-  padding: 1rem 0;
-}
-
-.project-left {
-  flex: 0 0 55%;
-}
-
-.project-right {
-  flex: 0 0 45%;
-  text-align: left;
-}
-
-.project-image {
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 0 1.2rem var(--main-color);
-  object-fit: cover;
-  transition: transform .3s ease, box-shadow .3s ease;
+  padding: 2rem 9%;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
 
-.project-image:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 2rem var(--main-color);
+/*STICKY HEADER*/
+.header.sticky {
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
 }
 
-/* -----------------------------------------
-   TEXT STYLING
------------------------------------------ */
+.logo {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 600;
+  cursor: default;
+}
 
-.project-right h2 {
-  font-size: 3rem;
+.navbar a {
+  font-size: 1.7rem;
+  margin-left: 4rem;
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
   color: var(--main-color);
-  margin-bottom: 1.5rem;
 }
 
-.project-right p {
-  font-size: 1.5rem;
-  color: #ddd;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--text-color);
+  display: none;
 }
 
-.project-list {
-  margin-top: 1rem;
-}
-
-.project-list li {
-  font-size: 1.5rem;
-  color: #ccc;
-  margin-bottom: 1rem;
-}
-
-/* -----------------------------------------
-   QUOTE
------------------------------------------ */
-
-.project-quote {
-  margin-top: 3rem;
-  padding: 2rem 3rem;
-  border-left: 4px solid var(--main-color);
-  font-size: 1.6rem;
-  color: #eee;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: .5rem;
-}
-
-/* -----------------------------------------
-   REFLECTION SECTION
------------------------------------------ */
-
-.reflection {
+.heading {
   text-align: center;
-  padding: 0.5rem;
-}
-
-.reflection h2 {
-  font-size: 3rem;
+  font-size: 4.5rem;
   color: var(--main-color);
   margin-bottom: 2rem;
 }
 
-.reflection h3 {
-  font-size: 2rem;
+/* CATEGORY SELECTOR */
+.portfolio-selector {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
   margin-top: 2rem;
-  margin-bottom: 1rem;
+}
+
+.tab-btn {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border-bottom: 3px solid transparent;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.tab-btn:hover {
   color: var(--main-color);
 }
 
-.reflection p,
-.reflection li {
-  font-size: 1.5rem;
-  color: #ddd;
-  line-height: 1.7;
+.tab-btn.active {
+  border-bottom: 3px solid var(--main-color);
+  color: var(--main-color);
 }
 
-/* -----------------------------------------
-   EXPLORE / BUTTON ROWS (IF NEEDED)
------------------------------------------ */
+/* PROJECT GRID */
 
-.project-links-section {
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.project-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.project-hero h1 {
+  font-size: 4rem;
+  color: var(--main-color);
+}
+.project-hero p {
+  font-size: 1.6rem;
+  color: #ccc;
+  max-width: 600px;
   text-align: center;
 }
 
-.project-link-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
+project-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 0;
+  margin-bottom: 4rem;
+}
+.project-section h2 {
+  font-size: 2.8rem;
+  color: var(--main-color);
+  margin-bottom: 1.5rem;
+}
+.project-section p {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  line-height: 1.8;
+  margin-bottom: 4rem;
+}
+.project-image {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem var(--main-color);
+  gap: 2rem;
+  padding: auto;
+  margin-bottom: 2rem;
 }
 
+.project-links-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.project-links-section .btn {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.project-links-section .btn:hover {
+  background: var(--main-color);
+  color: var(--second-bg-color);
+  box-shadow: 0 0 1rem var(--main-color);
+}
+
+/*quote*/
+.project-quote {
+  font-size: 1.8rem;
+  color: var(--main-color);
+  font-style: italic;
+  border-left: 4px solid var(--main-color);
+  padding-left: 1rem;
+  margin: 2rem 0;
+  margin-bottom: 4rem;
+}
+
+/*button ghost*/
+.ghost-btn {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* FOOTER */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -188,62 +225,20 @@ section {
 }
 
 .footer-iconTop a {
-  padding: .8rem;
+  padding: 0.8rem;
   background: var(--main-color);
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 
 .footer-iconTop a:hover {
-    box-shadow: 0 0 1rem var(--main-color);
+  box-shadow: 0 0 1rem var(--main-color);
 }
 
 .footer-iconTop a i {
   font-size: 2.4rem;
   color: var(--second-bg-color);
-}
-
-/* -----------------------------------------
-   RESPONSIVE
------------------------------------------ */
-
-/* -----------------------------------------
-   RESPONSIVE
------------------------------------------ */
-@media (max-width: 1200px) {
-    .html {
-        font-size: 55%;
-    }
-}
-
-@media (max-width: 991px) {
-  .header {
-    padding: 2rem 4%;
-  }
-  section {
-    padding: 10rem 4% 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .home,
-  .about {
-    flex-direction: column;
-  }
-  .home-img img,
-  .about-img img {
-    width: 70vw;
-  }
-}
-
-@media (max-width: 450px) {
-  html {
-    font-size: 50%;
-  }
-  .contact form .input-box input {
-    width: 100%;
-  }
 }
