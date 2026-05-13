@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast App | Case Study</title>
+
+  <link rel="stylesheet" href="../../project.css" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="../../index.html" class="logo">Case Study</a>
+    <nav class="navbar">
+      <a href="../../index.html">Home</a>
+      <a href="../../about.html">About</a>
+      <a href="../../portfolio.html" class="active">Portfolio</a>
+     
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <h1 class="heading">My <span>Project Showcase</span></h1>
+    <p class="subtitle">A collection of my latest work, highlighting my skills and creativity.</p>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search projects...">
+    </div>
+
+    <div class="tag-filter">
+      <button class="tag-btn active" data-tag="all">All</button>
+      <button class="tag-btn" data-tag="WebDev">#WebDev</button>
+      <button class="tag-btn" data-tag="DataScience">#DataScience</button>
+      <button class="tag-btn" data-tag="UIUX">#UIUX</button>
+      <button class="tag-btn" data-tag="GenAI">#GenAI</button>
+      <button class="tag-btn" data-tag="PersonalGrowth">#PersonalGrowth</button>
+    </div>
+  </section>
+
+  <!-- Project Grid -->
+  <section class="project-grid" id="projectContainer"></section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>© 2026 Aniko Vigh. All rights reserved.</p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
+    </div>
+  </footer>
+   <!--  Scroll reveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <!--typed js-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <script src="portfolio.js"></script>
+
+</body>
+  <script src="animations.js"></script>
+  <script src="project.js"></script>
+
+</body>
+</html>
