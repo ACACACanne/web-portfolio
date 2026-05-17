@@ -1,95 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactive Quiz App | Case Study</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast App | Case Study</title>
 
-  <link rel="stylesheet" href="../../project.css" />
-  <link rel="stylesheet" href="../../style.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-</head>
+    <link rel="stylesheet" href="../../project.css" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../portfolio.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <a href="../../index.html" class="logo">Case Study</a>
+      <nav class="navbar">
+        <a href="../../index.html">Home</a>
 
-  <header class="header">
-    <a href="../../index.html" class="logo">Portfolio</a>
-    <nav class="navbar">
-      <a href="../../index.html">Home</a>
-      <a href="../../about.html">About</a>
-      <a href="../../portfolio.html" class="active">Portfolio</a>
-      <a href="../../blog.html">Blog</a>
-      <a href="../../index.html#contact">Contact</a>
-    </nav>
-  </header>
+        <a href="../../portfolio.html" class="active">Portfolio</a>
 
-  <section class="project-hero">
-    <div class="project-hero-inner">
-      <h1>Interactive Quiz App</h1>
-      <p class="project-subtitle">A playful, animated quiz experience built for engagement and instant feedback.</p>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+    </header>
 
-      <p class="project-meta">
-        Category: <span>Web Development</span> ·
-        Stack: <span>HTML, CSS, JavaScript</span>
-      </p>
+    <!-- Project Hero -->
+      <section class="Project-hero">
+        <h1>Weather Forecast Dashboard</h1>
+        <p class="project-meta">
+          Published: <span>2026</span> · Tags:
+          <span>#WebDev #UIUX </span>
+        </p>
+      </section>
 
-      <div class="project-hero-links">
-        <a href="#" target="_blank" class="btn">Live Demo</a>
-        <a href="#" target="_blank" class="btn btn-outline">GitHub Repo</a>
-        <a href="../../index.html#contact" class="btn btn-ghost">Contact Me</a>
-      </div>
-    </div>
-  </section>
+      <section class="project-section">
+        <h2>Project Overview</h2>
+        <p>
+          The Interactive Learning Style Quiz was designed to transform a traditional questionnaire into a playful, intuitive experience. 
+          Instead of clicking through static radio buttons, users engage with a drag‑and‑drop interface that encourages exploration and reflection. 
+          The quiz consists of 25 questions based on real learning‑style indicators and helps users discover whether they lean toward Visual, Auditory, or Kinesthetic learning.
 
-  <section class="project-section">
-    <h2>Story & Intent</h2>
-    <p>
-      This project started as a way to explore interactive UI patterns and user‑driven flows.
-      I wanted to create something fun, lightweight, and responsive — a quiz that feels alive,
-      with animations that guide the user through each question.
-    </p>
-  </section>
+          Once all questions are sorted into “Often,” “Sometimes,” or “Seldom,” the system calculates the dominant learning style and generates a personalised report. 
+          This report includes study strategies, recommended tools, and practical tips tailored to the user’s strengths. 
+          The goal was to create an experience that feels interactive, accessible, and genuinely helpful, a small tool that empowers people to understand themselves better and learn more effectively.
+        </p>
 
-  <section class="project-section">
-    <h2>Technical Breakdown</h2>
+        <h2>Architecture Overview</h2>
 
-    <h3>Architecture</h3>
-    <p>
-      The quiz uses a simple JavaScript state machine to track progress, score, and transitions.
-      Each question is rendered dynamically, and animations are triggered based on user input.
-    </p>
+        <p>
+          The quiz is built using a lightweight, client‑side architecture focused on speed, accessibility, and simplicity. 
+          HTML provides the semantic structure, Tailwind CSS handles styling and responsive layout, and JavaScript manages all interactive behaviour.
 
-    <h3>Key Features</h3>
-    <ul class="project-list">
-      <li>Dynamic question rendering</li>
-      <li>Score tracking and result screen</li>
-      <li>Smooth animations and transitions</li>
-      <li>Responsive layout for mobile and desktop</li>
-    </ul>
-  </section>
+          The architecture centres around three core layers:
 
-  <section class="project-section">
-    <h2>Challenges & Learnings</h2>
-    <p>
-      The biggest challenge was designing a clean state flow that could handle user mistakes,
-      backtracking, and rapid clicking. I learned how important it is to separate UI logic
-      from game logic to keep everything predictable.
-    </p>
-  </section>
+          UI Layer (HTML + Tailwind CSS)  
+          Responsible for rendering the drag‑and‑drop zones, question cards, flip cards, and the final report layout.
 
-  <section class="project-section project-links-section">
-    <h2>Explore More</h2>
+          Interaction Layer (JavaScript)  
+          Handles drag events, drop validation, scoring logic, and dynamic DOM updates.
 
-    <div class="project-link-buttons">
-      <a href="#" target="_blank" class="btn">View Live Project</a>
-      <a href="#" target="_blank" class="btn btn-outline">View on GitHub</a>
-      <a href="../../portfolio.html" class="btn btn-ghost">← Back to Portfolio</a>
-    </div>
-  </section>
+          Logic Layer (Scoring + Report Engine)  
+          Processes user choices, calculates the dominant learning style, and generates a personalised summary.
 
-  <footer class="footer">
-    <p>© 2026 Aniko Vigh. All rights reserved.</p>
-  </footer>
+          Because everything runs in the browser, the quiz requires no backend, making it fast, portable, and easy to deploy on GitHub Pages.
+        </p>
 
-</body>
+        <h2>Component Structure</h2>
+
+        <p>
+          Although the project is built entirely with HTML, Tailwind CSS, and JavaScript, its internal structure is intentionally modular to keep the codebase clear and maintainable. 
+          The quiz is powered by a central question bank stored as a JavaScript array, which holds all 25 prompts along with their associated learning‑style indicators. A custom drag‑and‑drop engine manages the interactive behaviour, handling events like dragging, hovering, dropping, and validating placements to ensure smooth performance across desktop and mobile devices. 
+          Behind the scenes, a scoring engine tracks how each response contributes to the user’s learning‑style profile, calculates the dominant category, and resolves ties when necessary. Once the quiz is complete, a report generator assembles a personalised results page that includes definitions, study strategies, recommended tools, and insights tailored to the user’s strengths. The interface also includes a flip‑card component that introduces each learning style through a simple front‑and‑back animation. 
+          Finally, a lightweight UI state manager controls the visibility of sections, resets the quiz when needed, and activates the “Get Your Report” button only after all questions have been answered. Together, these pieces create a cohesive, scalable structure that keeps the experience intuitive and easy to extend.
+        </p>
+
+        <h2>Data Flow</h2>
+
+        <p>
+          The quiz follows a simple but effective client‑side flow that keeps the experience intuitive from start to finish. 
+          When the user loads the page, all 25 questions are generated dynamically and displayed as draggable cards. 
+          As each card is dragged into one of the response zones, the drag‑and‑drop engine records the placement and updates the scoring model in real time. Every drop event contributes to the user’s learning‑style profile, and once all questions have been sorted, the interface activates the “Get Your Report” button. 
+          When the user requests their results, the scoring engine determines the dominant learning style and the report generator assembles a personalised summary with tailored insights and study strategies. 
+          If the user chooses to retake the quiz, the UI state manager resets the interface, clears all data, and restores the original layout, allowing the entire process to begin again seamlessly.
+        </p>
+
+        <h2>Design Philosophy</h2>
+        <p>
+          The quiz was built around the belief that learning about yourself should feel engaging rather than clinical. 
+          Instead of relying on a traditional form, the drag‑and‑drop interaction introduces a sense of playfulness and curiosity, encouraging users to explore rather than simply answer. 
+          The design focuses on accessibility through semantic HTML, readable contrast, and keyboard‑friendly behaviour, while Tailwind ensures the interface remains responsive across mobile, tablet, and desktop. Every element is crafted for clarity, with simple instructions and a layout that reduces cognitive load. The results are framed with empathy, highlighting strengths and offering supportive guidance rather than rigid labels. 
+          Subtle interactivity — from flip cards to dynamic feedback — helps the experience feel alive and personal. 
+          Overall, the goal was to create a tool that feels friendly, modern, and genuinely helpful, inviting users to understand how they learn best in a way that is both intuitive and enjoyable.
+        </p>
+
+        <h2>Challenges & Learnings</h2>
+        <p>
+          The quiz was created with the intention of making self‑discovery feel engaging rather than clinical. 
+          Instead of presenting users with a static form, the drag‑and‑drop interaction introduces a sense of playfulness and curiosity, encouraging them to explore their preferences rather than simply select answers. The interface is built with accessibility in mind, using semantic HTML, readable contrast, and keyboard‑friendly behaviour, while Tailwind ensures the layout adapts smoothly across mobile, tablet, and desktop. Clarity was a guiding principle throughout the design, with simple instructions and a clean structure that reduces cognitive load. The results are framed with empathy, highlighting strengths and offering supportive guidance rather than rigid labels. Subtle interactive elements — such as flip cards and dynamic feedback — help the experience feel alive and personal. 
+          Overall, the goal was to create a tool that feels friendly, modern, and genuinely helpful, inviting users to understand how they learn best in a way that is intuitive and enjoyable.
+        </p>
+
+        <blockquote class="project-quote">
+          “Understanding how you learn isn’t about labels — it’s about unlocking the version of yourself that thrives when the world finally makes sense.”
+        </blockquote>
+
+        <p>
+          Building this platform taught me that storytelling isn’t separate from development. It’s
+          embedded in every decision, from the structure of a page to the colour of a button.
+        </p>
+      </section>
+
+      <section class="project-section project-links-section">
+        <a href="../../portfolio.html" class="btn btn-ghost">← Back to Portfolio</a>
+      </section>
+
+      <!-- Featured Slider -->
+      <section class="featured">
+  <h2 class="heading">Project <span>Images</span></h2>
+
+  <div class="image-scroll">
+    <img src="../../assets/pictures/portfolio2.jpg" alt="Weather forecast dashboard displaying current temperature cards for multiple cities alongside a search field to look up new locations. Clean modern interface with organized sections for temperature readings and location names.">
+    <img src="../../assets/pictures/portfolio2_2.jpg" alt="Detailed weather app interface showing hourly forecast predictions in a row of bars with time labels and temperature values, paired with a prominent radar map displaying weather patterns and precipitation zones.">
+    <img src="../../assets/pictures/project2_diagram1.jpg" alt="Design diagram outlining the app layout structure with labeled sections showing the placement of key components like search bar, temperature cards, and radar. Arrows indicate the interaction flow and user navigation paths through the interface.">
+    <img src="../../assets/pictures/project2_diagram2.jpg" alt="Wireframe diagram illustrating data architecture layers and user journey steps for the forecast interface. Flow lines connect different process stages from data input through display, with section labels identifying each component in the system.">
+    <img src="../../assets/pictures/project2_diagram3.jpg" alt="Process diagram demonstrating how forecast data is collected from sources, processed, and presented in the dashboard. Sequential step icons show each stage from data retrieval to final visualization on the user screen.">
+    <img src="../../assets/pictures/project2_diagram4.jpg" alt="Summary visual cataloging weather app components and responsive layout behavior. Interface sections are grouped by function showing how elements reorganize and adapt across mobile, tablet, and desktop screen sizes.">
+  </div>
+</section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-text">
+          <p>© 2026 Aniko Vigh. All rights reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+          <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
+        </div>
+      </footer>
+      <!--  Scroll reveal-->
+      <script src="https://unpkg.com/scrollreveal"></script>
+
+      <!--typed js-->
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+      <script src="index.js"></script>
+    </body>
+    <script src="animations.js"></script>
+    <script src="project.js"></script>
+    <script src="portfolio.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
