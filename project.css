@@ -185,6 +185,42 @@ section {
   color: var(--second-bg-color);
 }
 
+/* FEATURED SCROLLABLE GALLERY */
+.featured {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.image-scroll {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 2rem 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  height: auto; /* allow full height */
+}
+
+.image-scroll img {
+  height: clamp(300px, 70vh, 900px); /* tall enough for diagrams */
+  width: auto; /* keep natural width */
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem var(--main-color);
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  object-fit: contain; /* show full image */
+}
+
+/* Optional: nicer scrollbar */
+.image-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.image-scroll::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+}
+
 /* RESPONSIVE BREAKPOINTS */
 
 /* Mobile */
@@ -200,6 +236,9 @@ section {
   .project-section {
     padding: 2rem 0;
   }
+  .banner {
+    height: 50vh;
+  }
 }
 
 /* Tablets */
@@ -210,6 +249,20 @@ section {
 
   .project-section {
     max-width: 95%;
+  }
+}
+
+/*Laptops*/
+@media (max-width: 991px) {
+  .header {
+    padding: 2rem 5%;
+  }
+
+  section {
+    padding: 10rem 5% 2rem;
+  }
+  .banner .slider {
+    top: 15%;
   }
 }
 
@@ -232,5 +285,8 @@ section {
 
   .Project-hero {
     margin-top: 12rem;
+  }
+  .banner {
+    height: 90vh;
   }
 }
