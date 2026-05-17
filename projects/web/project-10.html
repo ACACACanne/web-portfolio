@@ -1,121 +1,141 @@
-html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Text Adventure Game | Case Study</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast App | Case Study</title>
 
-  <link rel="stylesheet" href="../../project.css" />
-  <link rel="stylesheet" href="../../style.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-</head>
+    <link rel="stylesheet" href="../../project.css" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../portfolio.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <a href="../../index.html" class="logo">Case Study</a>
+      <nav class="navbar">
+        <a href="../../index.html">Home</a>
 
-  <!-- Header -->
-  <header class="header">
-    <a href="../../index.html" class="logo">Portfolio</a>
-    <nav class="navbar">
-      <a href="../../index.html">Home</a>
-      <a href="../../about.html">About</a>
-      <a href="../../portfolio.html" class="active">Portfolio</a>
-      <a href="../../blog.html">Blog</a>
-      <a href="../../index.html#contact">Contact</a>
-    </nav>
-  </header>
+        <a href="../../portfolio.html" class="active">Portfolio</a>
 
-  <!-- Hero -->
-  <section class="project-hero">
-    <div class="project-hero-inner">
-      <h1>Text Adventure Game</h1>
-      <p class="project-subtitle">A story‑driven interactive game built with branching logic and dynamic UI updates.</p>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+    </header>
 
-      <p class="project-meta">
-        Category: <span>Web Development</span> ·
-        Stack: <span>HTML, CSS, JavaScript</span>
-      </p>
+    <!-- Project Hero -->
+      <section class="Project-hero">
+        <h1>Text Adventure Game</h1>
+        <p class="project-meta">
+          Published: <span>2026</span> · Tags:
+          <span>#WebDev #UIUX </span>
+        </p>
+      </section>
 
-      <div class="project-hero-links">
-        <a href="#" target="_blank" class="btn">Live Demo</a>
-        <a href="#" target="_blank" class="btn btn-outline">GitHub Repo</a>
-        <a href="../../index.html#contact" class="btn btn-ghost">Contact Me</a>
-      </div>
-    </div>
-  </section>
+      <section class="project-section">
+        <h2>Project Overview</h2>
+        <p>
+          The Text Adventure Game is an interactive storytelling experience built to explore how narrative design and JavaScript logic can work together to create a branching, choice‑driven world. 
+          Instead of relying on heavy graphics or complex engines, the project focuses on atmosphere, pacing, and decision‑making, allowing players to shape the story through simple but meaningful choices. Each scene unfolds dynamically, with the interface updating instantly as the player moves through the narrative. 
+          The project demonstrates how a lightweight structure can still deliver immersion, tension, and replayability, turning a small web app into a tiny universe of possibilities.
+        </p>
 
-  <!-- Story -->
-  <section class="project-section">
-    <h2>Story & Intent</h2>
-    <p>
-      I’ve always loved interactive fiction — the kind of stories where every choice feels meaningful.
-      This project was my way of exploring narrative design through code, building a branching adventure
-      where the player’s decisions shape the outcome.  
-      It blends storytelling, logic, and UI design into a small but expressive interactive world.
-    </p>
-  </section>
+        <h2>Architecture Overview</h2>
 
-  <!-- Technical Breakdown -->
-  <section class="project-section">
-    <h2>Technical Breakdown</h2>
+        <p>
+          The architecture is built around a modular scene engine that loads story nodes from a structured data object. 
+          Each node contains a description, a set of choices, and references to the next scenes, allowing the story to branch naturally without hard‑coding every path. The UI layer handles rendering the current scene and updating the available choices, while the logic layer manages transitions, state, and progression. This separation keeps the system flexible, making it easy to add new chapters, endings, or narrative twists without rewriting the core engine. 
+          The result is a clean, scalable architecture that supports expressive storytelling.
+        </p>
 
-    <h3>Architecture</h3>
-    <p>
-      The game is powered by a lightweight JavaScript engine that loads scenes from a structured data object.
-      Each scene contains:
-    </p>
+        <h2>Component Structure</h2>
 
-    <ul class="project-list">
-      <li>A description</li>
-      <li>A set of choices</li>
-      <li>Links to the next scenes</li>
-    </ul>
+        <p>
+          The project is composed of a few focused components that work together to deliver the interactive experience. 
+          The UI renderer displays the current scene text and dynamically generates the available choices. 
+          The story engine holds the narrative structure and determines which scene should load next based on the player’s decisions. 
+          A lightweight state manager tracks the player’s position in the story and ensures transitions feel seamless. 
+          Together, these components create a smooth loop of reading, choosing, and progressing, giving the game its rhythm and sense of flow.
+        </p>
 
-    <p>
-      When the player selects a choice, the UI updates instantly, replacing the text and options without
-      reloading the page. This creates a smooth, immersive reading experience.
-    </p>
+        <h2>Data Flow</h2>
 
-    <h3>Key Features</h3>
-    <ul class="project-list">
-      <li>Branching narrative system</li>
-      <li>Dynamic UI updates based on player choices</li>
-      <li>Replayable story paths</li>
-      <li>Lightweight, responsive design</li>
-      <li>Modular scene structure for easy expansion</li>
-    </ul>
-  </section>
+        <p>
+         The data flow begins when the game loads the initial scene from the story object. 
+         The UI displays the scene description and the choices available to the player. 
+         When a choice is selected, the system retrieves the corresponding next scene ID and passes it to the story engine, which loads the new scene and updates the UI accordingly. This loop continues until the player reaches an ending, at which point the interface offers the option to restart the adventure. The flow is simple but effective, allowing the narrative to branch cleanly while keeping the experience responsive and intuitive.
+        </p>
 
-  <!-- Challenges -->
-  <section class="project-section">
-    <h2>Challenges & Learnings</h2>
-    <p>
-      The biggest challenge was keeping the story logic readable and scalable.  
-      As the number of branches grew, I needed a clean way to structure scenes so they remained easy to edit.
-      I learned how to design a modular narrative engine using simple data structures, making it easy to add
-      new chapters or endings without rewriting the core logic.
-    </p>
+        <h2>Design Philosophy</h2>
+        <p>
+          The design embraces minimalism to keep the focus on the story. 
+          The interface is intentionally uncluttered, using clean typography and subtle spacing to create a sense of calm immersion. 
+          Each choice is presented clearly, encouraging players to pause and consider their next step. 
+          The goal was to make the experience feel like reading a living storybook — one where every click carries weight and every decision shapes the path ahead. 
+          The simplicity of the visuals allows the narrative to breathe, while the dynamic updates give the game a sense of immediacy and presence.
+        </p>
 
-    <p class="project-quote">
-      “Good interactive fiction is 50% story, 50% architecture.”
-    </p>
-  </section>
+        <h2>Challenges & Learnings</h2>
+        <p>
+          One of the main challenges was structuring the story in a way that remained readable and scalable as branches multiplied. 
+          Designing a modular narrative engine taught the importance of clean data structures and clear separation between story content and game logic. Another challenge was ensuring that transitions felt smooth and that the UI updated without jarring reloads. Through this project, the value of simplicity became clear: even a small engine can support rich storytelling when the architecture is thoughtful and the narrative is well‑paced. 
+          It reinforced how code and creativity can work together to build interactive experiences that feel alive.
+        </p>
 
-  <!-- Navigation -->
-  <section class="project-section project-links-section">
-    <h2>Explore More</h2>
+        <blockquote class="project-quote">
+          “Every choice is a doorway — step through one, and the story reshapes itself around you.”
+        </blockquote>
+        <h2>Future Enhancements</h2>
+        <p>
+          
+          The Text Adventure Game has a solid foundation, but there is still so much room for the world to expand and evolve. 
+          One of the most exciting opportunities lies in deepening the narrative system, allowing scenes to react not only to the player’s choices but also to the history of their journey. Introducing variables, inventory tracking, or character traits would give the story a sense of memory, making each playthrough feel more personal and unpredictable. 
+          The interface could also grow into a more atmospheric space, with subtle animations, sound cues, or visual themes that shift depending on the path the player takes.
 
-    <div class="project-link-buttons">
-      <a href="#" target="_blank" class="btn">View Live Project</a>
-      <a href="#" target="_blank" class="btn btn-outline">View on GitHub</a>
-      <a href="../../portfolio.html" class="btn btn-ghost">← Back to Portfolio</a>
-    </div>
-  </section>
+Another meaningful improvement would be the ability to load story data from external files, turning the engine into a reusable framework rather than a single contained narrative. This would open the door to larger stories, community‑created adventures, or even a small editor where writers could build their own branching worlds without touching the code. With these enhancements, the project could evolve from a simple assignment into a flexible storytelling platform — one that blends creativity, interactivity, and technical design into a richer, more immersive experience.
+        </p>
+      </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2026 Aniko Vigh. All rights reserved.</p>
-  </footer>
+      <section class="project-section project-links-section">
+        <a href="../../portfolio.html" class="btn btn-ghost">← Back to Portfolio</a>
+      </section>
 
-</body>
+      <!-- Featured Slider -->
+      <section class="featured">
+  <h2 class="heading">Project <span>Images</span></h2>
+
+  <div class="image-scroll">
+    <img src="../../assets/pictures/project10.jpg" alt="Text adventure game interface showing narrative text and branching choice buttons in a minimalist web layout with a calm interactive atmosphere">
+    <img src="../../assets/pictures/project10_2.jpg" alt="Second scene in the text adventure game with paragraph narrative and four choice buttons below in a quiet low visual clutter interface">
+    <img src="../../assets/pictures/project10_3.jpg" alt="Calm story scene in the text adventure game with choice buttons below the narrative text, conveying a quiet decision making experience">
+    <img src="../../assets/pictures/project10_diagram1.jpg" alt="Modular story engine diagram with connected scene nodes and branching paths showing how narrative choices lead to different story routes">
+    <img src="../../assets/pictures/project10_diagram2.jpg" alt="Flow chart showing player decisions moving between story scenes and updating the game interface with arrows linking decision points and scenes">
+    <img src="../../assets/pictures/project10_diagram3.jpg" alt="System diagram depicting game logic structure and narrative progression for the interactive text adventure with boxes for engine state and scene rendering">
+    <img src="../../assets/pictures/project10_diagram4.jpg" alt="Design diagram illustrating the modular architecture of the text adventure game with separate components for UI rendering, story engine, and state management">
+  </div>
+</section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-text">
+          <p>© 2026 Aniko Vigh. All rights reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+          <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
+        </div>
+      </footer>
+      <!--  Scroll reveal-->
+      <script src="https://unpkg.com/scrollreveal"></script>
+
+      <!--typed js-->
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+      <script src="index.js"></script>
+    </body>
+    <script src="animations.js"></script>
+    <script src="project.js"></script>
+    <script src="portfolio.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
